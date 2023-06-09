@@ -1,0 +1,57 @@
+.contact {
+  position: fixed;
+  bottom: 200px;
+  right: 50px;
+  & .eyes {
+    position: absolute;
+    width: 40px;
+    right: 0px;
+    top: 20px;
+    transform: rotate(10deg);
+    z-index: -1;
+    -webkit-transition: all 0.5s cubic-bezier(0.73, 0.71, 0.02, 0.98);
+    transition: all 0.5s cubic-bezier(0.73, 0.71, 0.02, 0.98);
+  }
+  & .thumbs {
+    z-index: -1;
+    width: 40px;
+    position:absolute;
+    right:35px;
+    top:15px;
+    transform: scaleX(-1) rotate(-20deg);
+    -webkit-transition: all 0.2s cubic-bezier(0.73, 0.71, 0.02, 0.98);
+    transition: all 0.2s cubic-bezier(0.73, 0.71, 0.02, 0.98);
+  }
+  &:hover .eyes {
+    top: -30px;
+    right: -10px;
+    transform: rotate(20deg);
+  }
+  & button {
+    z-index: 4;
+    background-color: #bfbdff;
+    font-family: "Archivo";
+    font-weight: 400;
+    font-size: 15px;
+    padding: 15px 20px;
+    border: solid 4px #272727;
+    color: #272727;
+    box-shadow: 5px 5px 0px #272727;
+    transition: all 0.1s;
+  }
+  & button:hover {
+    box-shadow: 10px 10px 0px #272727;
+    background-color: #cbcaff;
+    cursor: pointer;
+  }
+
+  & button:active {
+    background-color: #9997d8;
+    box-shadow: 3px 3px 0px #272727;
+  }
+
+
+  & button:active ~ .thumbs {
+    top:-35px;
+  }
+}

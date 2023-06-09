@@ -1,0 +1,52 @@
+.carousel {
+    position:absolute;
+    top: 80%;
+    left: 400px;
+    padding-bottom:40px;
+    & .highlight {
+        background-color:#74EFAD;
+        border: solid 4px #272727;
+        box-shadow: 5px 5px 0px #272727;
+        display:flex;
+        flex-flow:column;
+        max-width:400px;
+        max-height:600px;
+        & .label {
+            display:flex;
+            padding:20px;
+            & h3 {
+                margin:0px;
+                font-family: "Archivo";
+                font-weight: 800;
+                font-size:16px;
+            }
+            & .arrows {
+                margin-left:20px;
+            }
+        }
+    }
+}
+
+.carousel .projects {
+    display:flex;
+    flex-flow:row;
+    overflow-x:scroll;
+    overflow-y: hidden;
+    width:calc(100vw - 250px);
+    & .project {
+        min-width:360px;
+        max-width:360px;
+        height:500px;
+    }
+    & .project:last-child {
+        margin-right:calc(410px * 3);
+    }
+    &::-webkit-scrollbar {
+        display:none;
+    }
+
+}
+
+.arrows {
+    width:10px;
+}

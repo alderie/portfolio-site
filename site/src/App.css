@@ -1,5 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,100;125,600&family=Inter:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,100;125,400;125,700&family=DM+Mono:wght@300;400&display=swap');
+.App {
+  position:absolute;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
+}
 
+.guide {
+  position:fixed;
+  top:10px;
+  left:10px;
+  bottom:10px;
+  display:flex;
+  flex-flow:column;
+  align-items: center;
+  user-select: none;
+}
+
+.line {
+  height:70%;
+  width:2px;
+  border-radius:100%;
+  opacity:0.1;
+  background-color: #272727;
+}
+
+.guide .label {
+  position: relative;
+  font-family: 'DM Mono';
+  font-size:12px;
+  opacity:0.5;
+  transform: rotate(-90deg) translate(-100%);
+}
 
 .splash {
   position:absolute;
@@ -22,9 +54,9 @@
 }
 
 .subtext {
-  font-family: "Inter";
+  font-family: "DM Mono";
   margin-left:30px;
-  font-size:20px;
+  font-size:18px;
 }
 
 .subtext-decor {
@@ -39,45 +71,4 @@
 
 .accent {
   z-index:4;
-}
-
-.contact {
-  position:fixed;
-  bottom:50px;
-  right:50px;
-}
-
-.contact .emoji {
-  position:absolute;
-  width:40px;
-  right:0px;
-  top:20px;
-  transform: rotate(10deg);
-  z-index: -1;
-  transition: all 0.1s;
-  -webkit-transition: all 1s cubic-bezier(0.73, 0.71, 0.02, 0.98);
-  transition: all 1s cubic-bezier(0.73, 0.71, 0.02, 0.98);
-}
-.contact:hover .emoji {
-  top:-30px;
-  right:-10px;
-  transform: rotate(20deg);
-}
-
-.contact button {
-  z-index: 4;
-  background-color: #BFBDFF;
-  font-family: 'Archivo';
-  font-weight:bold;
-  font-size:15px;
-  padding:15px 20px;
-  border: solid 4px #272727;
-  color: #272727;
-  box-shadow: 5px 5px 0px #272727;
-  transition: all 0.2s;
-}
-.contact button:hover {
-  box-shadow: 10px 10px 0px #272727;
-  background-color: #CBCAFF;
-  cursor:pointer;
 }

@@ -1,0 +1,45 @@
+.project {
+    position:relative;
+    border-radius:10px;
+    border: solid 4px #272727;
+    margin: 20px;
+    background: rgb(255,255,255);
+    transition: all 0.3s;
+    &:before {
+        content: "";
+        position:absolute;
+        left:0px;
+        right:0px;
+        bottom:0px;
+        top:0px;
+        background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgb(141, 252, 191) 100%);
+        border-radius: 10px;
+        opacity:0;
+        z-index:1;
+    }
+    & .info {
+        display:flex;
+        flex-flow:column;
+        padding:20px;
+        padding-top:20px;
+        flex-grow:1;
+    }
+    & .title {
+        margin:0px;
+        font-family: "Archivo";
+        font-size:15px;
+    }
+    & .time {
+        font-family: "DM Mono";
+        font-size:12px;
+    }
+    &:hover {
+        cursor: pointer;
+        box-shadow:0px 4px 10px rgba(0,0,0,0.4);
+        border:solid 4px #181818;
+
+    }
+    &:hover:before {
+        opacity:0.5;
+    }
+}
