@@ -1,7 +1,7 @@
 .carousel {
     position:absolute;
     top: 80%;
-    left: 400px;
+    left: 450px;
     padding-bottom:40px;
     & .highlight {
         background-color:#74EFAD;
@@ -9,7 +9,7 @@
         box-shadow: 5px 5px 0px #272727;
         display:flex;
         flex-flow:column;
-        max-width:400px;
+        max-width:450px;
         max-height:600px;
         & .label {
             display:flex;
@@ -34,8 +34,8 @@
     overflow-y: hidden;
     width:calc(100vw - 250px);
     & .project {
-        min-width:360px;
-        max-width:360px;
+        min-width:410px;
+        max-width:410px;
         height:500px;
     }
     & .project:last-child {

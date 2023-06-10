@@ -83,8 +83,9 @@ function App() {
 
   return (
     <div className="App" ref={appRef}>
-      <div className="guide">
+      <div className={"guide " + (section == 1 ? "projects-active" : "")}>
         <div className="line"></div>
+        <div className="second-line"></div>
         <div className="label">
           {section === 0 ? "contact..." : "...projects"}
         </div>
