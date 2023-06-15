@@ -17,7 +17,7 @@
       padding: 20px;
       & h3 {
         margin: 0px;
-        font-family: "Archivo";
+        font-family: "Archivo", sans-serif;
         font-weight: 800;
         font-size: 16px;
       }
@@ -31,7 +31,7 @@
 .carousel .projects {
   display: flex;
   flex-flow: row;
-  overflow-x: scroll;
+  overflow-x: hidden;
   overflow-y: hidden;
   width: 90vw;
   & .project {
@@ -40,7 +40,7 @@
     height: 500px;
   }
   & .project:last-child {
-    margin-right: 820px;
+    margin-right: calc(410px * 4);
   }
   &::-webkit-scrollbar {
     display: none;
