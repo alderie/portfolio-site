@@ -99,8 +99,39 @@
   z-index:-3;
   transform: translate(0,-50%);
   opacity:0.6;
+  transition:all 0.1s;
 }
 
 .accent {
   z-index:4;
+}
+
+@media (max-width: 1200px) {
+  .splash {
+    position:absolute;
+    top:45%;
+    right:0px;
+    transform: translate(0,-50%);
+    user-select: none;
+    color: #272727;
+    text-align: right;
+  }
+  
+  .splash-text {
+    display:flex;
+    flex-flow:column;
+    font-family: 'Archivo';
+    font-weight: 100;
+    font-size: max(8vw, 50px);
+    margin-bottom:10px;
+  }
+
+  .subtext-decor {
+    position:absolute;
+    left:initial;
+    right: 10px;
+  }
+  .guide {
+    width: 20px;
+  }
 }

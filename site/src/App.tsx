@@ -31,7 +31,7 @@ const debounce = (delay: number, func: Function) => {
 };
 
 const BREAKPOINTS = [0, 1000];
-const NUM_PROJECTS = 4;
+const NUM_PROJECTS = 3;
 
 function App() {
   const [section, setSection, sectionRef] = useStateRef(0);
@@ -92,7 +92,7 @@ function App() {
       </div>
       <div className="splash">
         <h1 className="splash-text">
-          <b>VICTOR</b>NOVICHKOV
+          <b>VICTOR</b><span>NOVICHKOV</span>
         </h1>
         <div className="description">
           <div className="subtext">
