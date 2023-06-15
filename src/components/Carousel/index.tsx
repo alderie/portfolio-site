@@ -9,6 +9,14 @@ export interface CarouselProps {
 
 const PROJECTS: Array<ProjectProps> = [
   {
+    title: require("../../assets/project_assets/research_logo.png"),
+    isTitleLogo: true,
+    time: "may - [ongoing] 2023",
+    description: "Using Pinecone DB and GPT-4 vector embeddings, I'm working on a better search engine for research, that is able to both provide more granular search results and give meaningful feedback in response to the abstract search query.",
+    toolsUsed: ["Typescript", "React", "Pinecone", "Python", "GPT-4 API", "Pandas"],
+    previewImage: require("../../assets/project_assets/research_preview.png")
+  },
+  {
     title: "DOMICILIUM",
     time: "april 7 - 9, 2023",
     description:
@@ -24,18 +32,10 @@ const PROJECTS: Array<ProjectProps> = [
     previewImage: require("../../assets/project_assets/congress_whisper_preview.png"),
   },
   {
-    title: require("../../assets/project_assets/research_logo.png"),
-    isTitleLogo: true,
-    time: "may - [ongoing] 2023",
-    description: "Using Pinecone DB and GPT-4 vector embeddings, I'm working on a better search engine for research, that is able to both provide more granular search results and give meaningful feedback in response to the abstract search query.",
-    toolsUsed: ["Typescript", "React", "Pinecone", "Python", "GPT-4 API", "Pandas"],
-    previewImage: require("../../assets/project_assets/research_preview.png")
-  },
-  {
     title: require("../../assets/project_assets/lofi_logo.png"),
     isTitleLogo: true,
     time: "sep 20, 2021",
-    description: "I like listening to lofi while I work. I decided to build a simple lofi player in Electron with some style inspirations from the Apple Watch products",
+    description: "I like listening to lofi while I work. I decided to build a simple lofi player in Electron with some style inspirations from the Apple Watch.",
     toolsUsed: ["Typescript", "Electron"],
     previewImage: require("../../assets/project_assets/lofi_preview.png")
   }

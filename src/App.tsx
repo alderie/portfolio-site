@@ -4,6 +4,11 @@ import mySvg from "./paint.svg";
 import { ContactButton } from "./components/ContactButton";
 import { Carousel } from "./components/Carousel";
 
+/**
+ * Utility function that makes a useState object that also provides a linked ref
+ * @param {T} initialState 
+ * @returns {[T, React.Dispatch<React.SetStateAction<T>>, React.MutableRefObject<T>]}
+ */
 const useStateRef = <T extends unknown>(initialState: T) => {
   const [state, setState] = useState(initialState);
   const ref = useRef(initialState);
@@ -16,6 +21,12 @@ const useStateRef = <T extends unknown>(initialState: T) => {
   return [state, setState, ref] as const;
 };
 
+/**
+ * Utility function for making debounced calls
+ * @param delay (debounce delay in ms)
+ * @param func (function to be called)
+ * @returns Function that can be called with the debounce delay
+ */
 const debounce = (delay: number, func: Function) => {
   let called = false;
   return () => {
@@ -35,6 +46,23 @@ const NUM_PROJECTS = 3;
 function App() {
   const [section, setSection, sectionRef] = useStateRef(0);
   const [projectNum, setProjectNum, projectNumRef] = useStateRef(0);
+
+  // Debounce handling for scroll wheel page position
+  const increasePagePositionScroll = useRef(debounce(500, ()=>{
+    if (sectionRef.current === 1 && projectNumRef.current < NUM_PROJECTS) {
+      setProjectNum(Math.min(projectNumRef.current + 1, NUM_PROJECTS));
+    } else {
+      setSection(Math.min(sectionRef.current + 1, BREAKPOINTS.length - 1));
+    }
+  }))
+
+  const decreasePagePositionScroll = useRef(debounce(500, ()=>{
+    if (sectionRef.current === 1 && projectNumRef.current > 0) {
+      setProjectNum(Math.max(projectNumRef.current - 1, 0));
+    } else {
+      setSection(Math.max(sectionRef.current - 1, 0));
+    }
+  }))
 
   /**
    * Debounced section and project index setters
@@ -70,17 +98,9 @@ function App() {
     const onScroll = (evt: WheelEvent) => {
       // Scroll down
       if (evt.deltaY > 0) {
-        if (sectionRef.current === 1 && projectNumRef.current < NUM_PROJECTS) {
-          increaseProjectNum.current();
-        } else {
-          increaseSectionNum.current();
-        }
+        increasePagePositionScroll.current();
       } else if (evt.deltaY < 0) {
-        if (sectionRef.current === 1 && projectNumRef.current > 0) {
-          decreaseProjectNum.current();
-        } else {
-          decreaseSectionNum.current();
-        }
+        decreasePagePositionScroll.current();
       }
     };
 
@@ -101,7 +121,7 @@ function App() {
     };
 
     const onTouchEnd = (evt: TouchEvent) => {
-      const THRESHOLD = 50;
+      const THRESHOLD = 100;
       // Special handling of swiping in the x direction for the projects section
       if (sectionRef.current === 1) {
 
@@ -126,6 +146,8 @@ function App() {
           decreaseSectionNum.current();
         }
       }
+
+      offset.current = { x: 0, y: 0};
     };
 
     window.addEventListener("wheel", onScroll);
