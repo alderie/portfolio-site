@@ -1,22 +1,14 @@
 import "./style.scss";
 import eyesURL from "./assets/eyes.png";
 import thumbsURL from "./assets/thumbs.png";
-import { useState } from "react";
 
 export const ContactButton: React.FC = () => {
-  const [open, setOpen] = useState(false);
-
   return (
     <a href="mailto:victorvnovichkov@gmail.com">
-      <div
-        className="contact"
-        onClick={() => {
-          setOpen((state) => !state);
-        }}
-      >
-        <img src={eyesURL} className="eyes" />
+      <div className="contact">
+        <img src={eyesURL} className="eyes" alt="eyes emoji" />
         <button>contact me</button>
-        <img src={thumbsURL} className="thumbs" />
+        <img src={thumbsURL} className="thumbs" alt="thumbs up emoji" />
       </div>
     </a>
   );

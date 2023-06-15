@@ -63,7 +63,7 @@ export const Carousel: React.FC<CarouselProps> = ({ currentProjectID }) => {
       <div className="highlight">
         <div className="label">
           <h3 className="title">SEE WHAT I'VE MADE</h3>
-          <img src={arrows} className="arrows" />
+          <img src={arrows} className="arrows" alt="three arrows pointing down" />
         </div>
         <div className="projects" ref={projectsRef}>
           {PROJECTS.map((project, i) => {

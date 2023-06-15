@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import mySvg from "./paint.svg";
 import { ContactButton } from "./components/ContactButton";
@@ -69,7 +68,7 @@ function App() {
     return () => {
       window.removeEventListener("wheel", onScroll);
     };
-  }, []);
+  }, [increasePagePosition, decreasePagePosition]);
 
   useEffect(() => {
     if (appRef.current) {
@@ -83,7 +82,7 @@ function App() {
 
   return (
     <div className="App" ref={appRef}>
-      <div className={"guide " + (section == 1 ? "projects-active" : "")}>
+      <div className={"guide " + (section === 1 ? "projects-active" : "")}>
         <div className="line"></div>
         <div className="second-line"></div>
         <div className="label">
@@ -98,7 +97,7 @@ function App() {
           <div className="subtext">
             design - development - <b className="accent">magic</b>
           </div>
-          <img src={mySvg} className="subtext-decor" />
+          <img src={mySvg} className="subtext-decor" alt="colorful brushstrokes" />
         </div>
       </div>
       <ContactButton></ContactButton>
