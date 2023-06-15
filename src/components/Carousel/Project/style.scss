@@ -21,7 +21,7 @@
     & img.title {
         height:40px;
         margin: 10px 0px;
-        width:fit-content;
+        align-self:flex-start;
     }
     & .time {
         font-family: "DM Mono", monospace;
